@@ -341,33 +341,36 @@
         </thead>
         <tbody>
             <tr>
-                <td data-label="Service"><strong>Managed Hosting (Regional)</strong></td>
-                <td data-label="Description">Secure, high-performance hosting on servers located in Mozambique or South Africa. Includes SSL certificate, daily backups, and continuous uptime monitoring.</td>
+                <td data-label="Service"><strong>Regional Hosting (Southern Africa)</strong></td>
+                <td data-label="Description">
+                    Hosted physically in Southern Africa (e.g., South Africa or Mozambique). 
+                    <strong>Optimized for low latency</strong> for local stakeholders and fast loading times within the region.
+                </td>
                 <td data-label="Annual Cost">19,125 – 38,250</td>
             </tr>
             <tr>
-                <td data-label="Service"><strong>Managed Hosting (Global)</strong></td>
-                <td data-label="Description">Secure, high-performance hosting on globally distributed servers (e.g., Europe, US) for maximum international reach and redundancy. Includes SSL, backups, uptime monitoring.</td>
+                <td data-label="Service"><strong>International Hosting (Europe/US)</strong></td>
+                <td data-label="Description">
+                    Hosted in major global data centers. Provides better connectivity for international partners but results in 
+                    <strong>slightly higher latency</strong> for users located in Mozambique.
+                </td>
                 <td data-label="Annual Cost">31,875 – 63,750</td>
             </tr>
             <tr>
+                <td data-label="Service"><strong>Dual-Region Deployment (Both)</strong></td>
+                <td data-label="Description">
+                    Website deployed simultaneously on <strong>both</strong> Southern African and International servers. 
+                    Ensures minimum latency for all users regardless of location. (Combines costs of both options).
+                </td>
+                <td data-label="Annual Cost">51,000 – 102,000</td>
+            </tr>
+            <tr>
                 <td data-label="Service"><strong>Technical Maintenance</strong></td>
-                <td data-label="Description">Regular WordPress core and plugin updates, proactive security monitoring, off-site backups, and minor technical support (up to 10 hours/year) to ensure smooth operation.</td>
+                <td data-label="Description">Regular WordPress core and plugin updates, proactive security monitoring, off-site backups, and minor technical support (up to 10 hours/year).</td>
                 <td data-label="Annual Cost">51,000 – 76,500</td>
-            </tr>
-            <tr class="total-row">
-                <td colspan="2" data-label="Total">Total Annual Recurring Cost (Regional Hosting)</td>
-                <td data-label="Total Cost">70,125 – 114,750</td>
-            </tr>
-            <tr class="total-row">
-                <td colspan="2" data-label="Total">Total Annual Recurring Cost (Global Hosting)</td>
-                <td data-label="Total Cost">82,875 – 140,250</td>
             </tr>
         </tbody>
     </table>
-    <p class="table-note">
-        <em>Clients can choose the hosting option that best suits their audience and performance needs.</em>
-    </p>
 </section>
 
 <section>
@@ -514,18 +517,30 @@
             <tr>
                 <!-- Annual Hosting Selection -->
                 <td data-label="Hosting Option">
-                    <strong>Annual Hosting Option:</strong><br><br>
+                    <strong>Annual Hosting Preference:</strong><br><br>
                     <label class="option-label">
                         <input type="radio" name="hosting" value="regional" data-cost-min="19125.00" data-cost-max="38250.00" checked> 
-                        <span>Regional (Mozambique/South Africa) <br><strong>19,125 – 38,250</strong></span>
+                        <span>
+                            <strong>Regional (Southern Africa)</strong><br>
+                            <small>Low latency for locals.</small><br>
+                            19,125 – 38,250
+                        </span>
                     </label>
                     <label class="option-label">
                         <input type="radio" name="hosting" value="global" data-cost-min="31875.00" data-cost-max="63750.00"> 
-                        <span>Global (High Performance) <br><strong>31,875 – 63,750</strong></span>
+                        <span>
+                            <strong>International (Europe/US)</strong><br>
+                            <small>Global reach, higher local latency.</small><br>
+                            31,875 – 63,750
+                        </span>
                     </label>
                     <label class="option-label">
                         <input type="radio" name="hosting" value="multi-region" data-cost-min="51000.00" data-cost-max="102000.00"> 
-                        <span>Multi-Region (Regional + Global) <br><strong>51,000 – 102,000</strong></span>
+                        <span>
+                            <strong>Dual Deployment (Both)</strong><br>
+                            <small>Lowest latency for everyone.</small><br>
+                            51,000 – 102,000
+                        </span>
                     </label>
                 </td>
                 <td class="cost-cell" data-label="Cost">
