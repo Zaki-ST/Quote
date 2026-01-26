@@ -38,8 +38,9 @@
             box-shadow: 0 10px 30px var(--shadow-medium);
         }
 
+        /* --- Header Styles --- */
         header {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             text-align: center;
             padding-bottom: 30px;
             border-bottom: 1px solid var(--border);
@@ -47,9 +48,9 @@
 
         header h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 3.2em;
+            font-size: 2.8em;
             color: var(--primary-dark);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
@@ -69,14 +70,14 @@
         }
 
         header p {
-            font-size: 1.15em;
+            font-size: 1.1em;
             color: var(--text-light);
             margin-top: 15px;
-            font-weight: 400;
         }
 
+        /* --- Section Styles --- */
         section {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
             padding-top: 30px;
             border-top: 1px dashed var(--border);
         }
@@ -88,13 +89,13 @@
 
         h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2em;
+            font-size: 1.8em;
             color: var(--primary-dark);
-            border-left: 8px solid var(--secondary);
-            padding-left: 20px;
-            margin-bottom: 35px;
+            border-left: 6px solid var(--secondary);
+            padding-left: 15px;
+            margin-bottom: 25px;
             font-weight: 700;
-            line-height: 1.2;
+            line-height: 1.3;
             display: flex;
             align-items: center;
         }
@@ -107,13 +108,10 @@
             flex-shrink: 0;
         }
 
-        p {
-            margin-bottom: 20px;
-            color: var(--text-dark);
-        }
+        p { margin-bottom: 20px; }
 
         ul {
-            padding-left: 30px;
+            padding-left: 20px;
             list-style: none;
         }
 
@@ -132,10 +130,10 @@
             top: 0;
         }
 
+        /* --- Desktop Table Styles --- */
         table {
             width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
+            border-collapse: collapse; /* Changed for easier responsive handling */
             margin-top: 30px;
             font-size: 0.95em;
             border: 1px solid var(--border);
@@ -144,212 +142,243 @@
             box-shadow: 0 5px 15px var(--shadow-light);
         }
 
-        table thead th {
+        table thead {
             background-color: var(--primary);
             color: white;
+        }
+
+        table thead th {
             text-align: left;
-            padding: 18px 20px;
-            border-bottom: 2px solid var(--secondary);
+            padding: 15px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-size: 0.9em;
         }
 
         table tbody td {
-            padding: 18px 20px;
+            padding: 15px;
             border-bottom: 1px solid var(--light-gray);
-            vertical-align: middle;
-            background-color: var(--bg-light);
+            vertical-align: top;
         }
 
-        table tbody tr:last-child td {
-            border-bottom: none;
-        }
+        table tbody tr:nth-child(even) { background-color: var(--light-gray); }
 
-        table tbody tr:nth-child(even) td {
-            background-color: var(--light-gray);
-        }
-
+        /* Total Rows */
         table tbody tr.total-row td {
             font-weight: 700;
             background-color: var(--accent-light);
             border-top: 2px solid var(--secondary);
-            font-size: 1.1em;
-            color: var(--primary-dark);
-        }
-        table tbody td strong {
             color: var(--primary-dark);
         }
 
+        /* --- Highlight Box --- */
         .highlight-box {
             background-color: var(--accent-light);
-            border-left: 8px solid var(--secondary);
-            padding: 25px 30px;
-            margin: 40px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px var(--shadow-light);
-            font-size: 1.05em;
+            border-left: 6px solid var(--secondary);
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 6px;
             color: var(--primary-dark);
         }
 
-        .highlight-box ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .highlight-box ul li {
-            padding-left: 25px;
-            position: relative;
-        }
-        .highlight-box ul li::before {
-            content: '➔';
-            color: var(--primary);
-            font-weight: 700;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        footer {
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid var(--border);
-            font-size: 0.9em;
-            color: var(--text-light);
-            text-align: center;
-        }
-
-        /* --- Modern Summary Table Styles --- */
+        /* --- Summary Table Special Styles --- */
         #summary-table {
             border: none;
-            border-radius: 12px;
-            box-shadow: 0 15px 40px var(--shadow-medium);
+            background: transparent;
+            box-shadow: 0 10px 25px var(--shadow-medium);
+        }
+        #summary-table thead {
+            background: var(--primary-dark); /* Fallback */
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            color: white;
-            margin-bottom: 40px;
-        }
-        #summary-table thead th {
-            background-color: transparent;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-            padding: 20px 25px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1em;
-            font-weight: 700;
-        }
-        #summary-table tbody td {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            padding: 15px 25px;
-            border-bottom: 1px dashed var(--border);
-        }
-        #summary-table tbody tr:last-child td {
-            border-bottom: none;
         }
         #summary-table .cost-cell {
             text-align: right;
             font-weight: 700;
-            min-width: 150px;
             color: var(--secondary);
             font-family: 'Montserrat', sans-serif;
+            white-space: nowrap;
         }
         #summary-table .total-row-summary {
             background-color: var(--primary);
             color: white;
-            font-weight: bold;
-            font-size: 1.3em;
-            border-top: 2px solid var(--secondary);
+            font-size: 1.2em;
         }
         #summary-table .total-row-summary .cost-cell {
             color: white;
-            font-size: 1.4em;
-            font-weight: 700;
             background-color: var(--secondary);
         }
+
+        /* Form Elements */
         .option-label {
             display: flex;
-            align-items: center;
-            gap: 15px;
-            font-weight: 400;
+            align-items: flex-start;
+            gap: 12px;
             cursor: pointer;
-            transition: color 0.2s ease;
+            margin-bottom: 8px;
         }
-        .option-label:hover {
-            color: var(--secondary);
-        }
-        .option-label input[type="radio"],
-        .option-label input[type="checkbox"] {
-            transform: scale(1.4);
+        .option-label input {
+            margin-top: 6px;
+            transform: scale(1.3);
             accent-color: var(--primary);
-            cursor: pointer;
         }
         .table-note {
-            font-size:0.9em;
-            color:var(--text-light);
-            margin-top:15px;
-            padding-left: 10px;
+            font-size: 0.85em;
+            color: var(--text-light);
+            margin-top: 10px;
             font-style: italic;
         }
 
-        /* --- MOBILE RESPONSIVENESS (ADDED) --- */
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            font-size: 0.9em;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        /* =========================================
+           MOBILE RESPONSIVE STYLES (The Fix)
+           ========================================= */
         @media screen and (max-width: 768px) {
-            
             body {
-                padding: 10px 0; /* Less padding on outer body */
+                padding: 0;
+                background: #fff; /* Remove outer gray on mobile for cleaner look */
             }
 
             .container {
-                width: auto;
-                margin: 10px;
-                padding: 30px 20px; /* Reduced side padding significantly */
+                width: 100%;
+                box-sizing: border-box; /* Crucial for padding calculation */
+                margin: 0;
+                padding: 20px 15px; /* Minimal padding */
+                box-shadow: none;
+                border-radius: 0;
             }
 
             header h1 {
-                font-size: 1.8em; /* Smaller title */
+                font-size: 1.8em;
+                word-wrap: break-word; /* Prevent long words breaking layout */
             }
-
+            
             header p {
                 font-size: 1em;
             }
 
             h2 {
-                font-size: 1.5em; /* Smaller headings */
-                padding-left: 15px;
+                font-size: 1.4em;
             }
-            
-            /* Make tables scrollable horizontally so they don't break layout */
-            table {
+
+            /* --- FORCE TABLES INTO CARD VIEW --- */
+            table, thead, tbody, th, td, tr {
                 display: block;
                 width: 100%;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
+                box-sizing: border-box; /* Ensure padding doesn't overflow width */
             }
 
-            /* Ensure columns don't get too squished inside the scrollable area */
-            th, td {
-                min-width: 120px; 
-            }
-            /* Give description columns more width */
-            td:nth-child(2) {
-                min-width: 200px;
+            /* Hide table headers (but keep accessible) */
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
             }
 
-            /* Adjust highlight box */
-            .highlight-box {
-                padding: 20px;
-                margin: 20px 0;
+            table {
+                border: none;
+                box-shadow: none;
+                margin-top: 10px;
             }
 
-            /* Fix option labels (Radios/Checkboxes) */
-            .option-label {
-                align-items: flex-start; /* Top align if text wraps */
-                gap: 10px;
-                font-size: 0.95em;
+            /* Each Row becomes a Card */
+            tbody tr {
+                margin-bottom: 20px;
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                background-color: #fff;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+                overflow: hidden; /* Contains child floats/margins */
+            }
+            
+            /* Zebra striping affects the whole card now */
+            table tbody tr:nth-child(even) {
+                background-color: #f9f9f9;
             }
 
-            .option-label input[type="radio"],
-            .option-label input[type="checkbox"] {
-                margin-top: 5px; /* Visual alignment with text */
-                flex-shrink: 0; /* Prevent icon shrinking */
+            /* Cell Styles */
+            tbody td {
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 15px; /* Reset padding */
+                padding-right: 15px;
+                text-align: left; /* Align text left for readability */
+                padding-top: 30px; /* Space for the label */
+            }
+
+            /* The Label (Generated from data-label) */
+            tbody td::before {
+                content: attr(data-label);
+                position: absolute;
+                top: 8px;
+                left: 15px;
+                width: calc(100% - 30px);
+                white-space: nowrap;
+                font-size: 0.75em;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: var(--secondary);
+                letter-spacing: 0.5px;
+            }
+
+            tbody td:last-child {
+                border-bottom: none;
+            }
+
+            /* Special styling for Cost Cells in mobile */
+            .cost-cell, 
+            td[data-label*="Cost"] {
+                font-weight: 700;
+                color: var(--primary);
+                font-size: 1.1em;
+            }
+
+            /* Special handling for Total Rows */
+            table tbody tr.total-row td,
+            #summary-table .total-row-summary td {
+                background-color: var(--primary);
+                color: white;
+                text-align: center;
+                padding-top: 15px; /* No label needed usually, or label is implicit */
+            }
+            
+            /* Hide the generated label for total rows if it looks messy, 
+               or style it to match the white text */
+            table tbody tr.total-row td::before,
+            #summary-table .total-row-summary td::before {
+                color: rgba(255,255,255,0.7);
+                position: static;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            /* Summary Table Specifics for Mobile */
+            #summary-table {
+                background: transparent;
+                box-shadow: none;
+            }
+            
+            /* Remove the label for the Radio/Checkbox cells to give them full width */
+            td:has(input[type="radio"]), 
+            td:has(input[type="checkbox"]) {
+                padding-top: 15px;
+            }
+            td:has(input[type="radio"])::before,
+            td:has(input[type="checkbox"])::before {
+                display: none;
+            }
+
+            /* Fix separating lines */
+            tr td hr {
+                margin: 0;
             }
         }
     </style>
@@ -361,77 +390,49 @@
 <header>
     <h1>Website Development & Hosting Proposal</h1>
     <p>
-        <strong>Project:</strong> Institutional Website – Renewable Energy Sector (AMER)<br>
-        <strong>Delivery Model:</strong> Agile Development Methodology<br>
-        <strong>Technology:</strong> WordPress (Premium Vendor Template)
+        <strong>Project:</strong> Institutional Website (AMER)<br>
+        <strong>Model:</strong> Agile Development<br>
+        <strong>Tech:</strong> WordPress
     </p>
 </header>
 
 <section>
     <h2><span>Executive Summary</span></h2>
     <p>
-        This proposal provides a comprehensive quote for the development and hosting of a new institutional website for AMER,
-        an association in the renewable energy sector. We propose a user-friendly WordPress platform, featuring
-        institutional pages, News/Blog, Events, a Members/Partners directory, and Contact forms.
-        The site will be fully bilingual (Portuguese/English), responsive, and SEO-optimized,
-        with its design taking inspiration from the ALER website.
-        This document details the development quote, recurring hosting and maintenance costs and estimated timeline.
+        This proposal provides a comprehensive quote for the development and hosting of a new institutional website for AMER.
+        We propose a user-friendly WordPress platform, featuring
+        institutional pages, News/Blog, Events, a Members directory, and Contact forms.
+        The site will be fully bilingual (Portuguese/English), responsive, and SEO-optimized.
     </p>
 </section>
 
 <section>
     <h2><span>0.</span> Pricing Methodology</h2>
-
     <p>
-        The cost estimates provided in this proposal are calculated based on an estimated professional hourly rate.
-        This rate covers all aspects of service delivery, including analysis, project coordination, design,
-        development, quality assurance, security, and deployment.
+        Costs are calculated based on an estimated professional hourly rate covering analysis, design,
+        development, QA, and deployment.
     </p>
-
     <p class="table-note">
-        <em>For transparent calculation, an estimated blended professional hourly rate of <strong>3,000 MZN per hour</strong> has been applied to base development components, and <strong>4,000 MZN per hour</strong> for optional modules and specialized services.</em>
-    </p>
-
-    <p>
-        All development and recurring costs are presented with clear ranges. Fixed prices can be established
-        upon detailed scope finalization, ensuring budget predictability for the agreed services.
+        <em>Rate: <strong>3,000 MZN/hr</strong> (Base) | <strong>4,000 MZN/hr</strong> (Specialized).</em>
     </p>
 </section>
 
 <section>
-    <h2><span>1.</span> Project Approach</h2>
-    <p>
-        The website will be developed using a reliable, premium WordPress theme. This approach ensures long-term maintainability and allows for cost-efficient delivery without compromising quality. The solution will be specifically tailored to the operational and communication needs of a renewable energy association working in an international context. The visual design will draw inspiration from leading institutional sites in the sector, such as the ALER (www.aler-energia.org) website, to achieve a modern, professional, and intuitive user experience.
-    </p>
-
+    <h2><span>1.</span> Scope of Work</h2>
     <div class="highlight-box">
         <ul>
-            <li>Cost-efficient delivery without compromising quality</li>
-            <li>Scalable and easy-to-maintain architecture</li>
-            <li>Clear separation between base scope and optional enhancements</li>
-            <li>Design inspiration from leading sector websites like ALER</li>
+            <li>Premium WordPress Theme Architecture</li>
+            <li>Institutional Pages & Governance Structure</li>
+            <li>News, Blog & Events Management</li>
+            <li>Members Directory</li>
+            <li>Bilingual (PT/EN)</li>
+            <li>Responsive & SEO Optimized</li>
         </ul>
     </div>
 </section>
 
 <section>
-    <h2><span>2.</span> Scope of Work</h2>
-    <ul>
-        <li>WordPress CMS for easy content management and updates</li>
-        <li>Institutional pages (e.g., About Us, Mission, Vision, Governance, Members)</li>
-        <li>Dynamic News / Blog section for regular updates and announcements</li>
-        <li>Dedicated Events section for upcoming and past activities, with filters</li>
-        <li>Comprehensive Members / Partners directory, potentially with search functionality</li>
-        <li>User-friendly Contact forms with spam protection</li>
-        <li>Fully bilingual structure (Portuguese / English) for broad international reach</li>
-        <li>SEO-friendly architecture for improved search engine visibility</li>
-        <li>Responsive design ensuring optimal viewing and functionality on all devices (desktop, tablet, mobile)</li>
-        <li>Basic accessibility considerations (WCAG 2.1 AA guidelines where applicable)</li>
-    </ul>
-</section>
-
-<section>
-    <h2><span>3.</span> Development Quote (Base Scope – One-time)</h2>
+    <h2><span>2.</span> Development Quote (Base Scope)</h2>
 
     <table>
         <thead>
@@ -444,47 +445,33 @@
         </thead>
         <tbody>
             <tr>
-                <td><strong>Premium Theme & Licensing</strong></td>
-                <td>Acquisition of a premium WordPress theme from a reputable vendor, providing robust features and dedicated support.</td>
-                <td>—</td>
-                <td>9,562.50 – 22,312.50</td>
+                <td data-label="Component"><strong>Premium Theme & Licensing</strong></td>
+                <td data-label="Description">Acquisition of a premium WordPress theme from a reputable vendor.</td>
+                <td data-label="Est. Hours">—</td>
+                <td data-label="Estimated Cost">9,562.50 – 22,312.50</td>
             </tr>
             <tr>
-                <td><strong>Setup & Architecture</strong></td>
-                <td>WordPress CMS installation, initial theme configuration, robust site structure planning, and bilingual setup for Portuguese/English content management.</td>
-                <td>20 – 30</td>
-                <td>60,000.00 – 90,000.00</td>
+                <td data-label="Component"><strong>Setup & Architecture</strong></td>
+                <td data-label="Description">CMS installation, theme config, site structure, bilingual setup.</td>
+                <td data-label="Est. Hours">20 – 30</td>
+                <td data-label="Estimated Cost">60,000.00 – 90,000.00</td>
             </tr>
             <tr>
-                <td><strong>Core Modules & Functionalities</strong></td>
-                <td>Implementation and configuration of News, Events, Members Directory, Contact Forms, essential SEO setup, and foundational security and performance optimization.</td>
-                <td>40 – 60</td>
-                <td>120,000.00 – 180,000.00</td>
+                <td data-label="Component"><strong>Core Modules</strong></td>
+                <td data-label="Description">News, Events, Directory, Contact Forms, SEO setup, Security.</td>
+                <td data-label="Est. Hours">40 – 60</td>
+                <td data-label="Estimated Cost">120,000.00 – 180,000.00</td>
             </tr>
             <tr class="total-row">
-                <td colspan="3">Total Estimated Development Hours (One-time)</td>
-                <td>60 – 90</td>
-            </tr>
-            <tr class="total-row">
-                <td colspan="3">Total Estimated Development Cost (One-time, excluding theme)</td>
-                <td>180,000.00 – 270,000.00</td>
-            </tr>
-            <tr class="total-row">
-                <td colspan="3"><strong>Overall Total Estimated Development Cost (One-time)</strong></td>
-                <td><strong>189,562.50 – 292,312.50</strong></td>
+                <td colspan="3" data-label="Summary">Total Estimated Development Cost (One-time)</td>
+                <td data-label="Total Cost">189,562.50 – 292,312.50</td>
             </tr>
         </tbody>
     </table>
-
-    <p class="table-note">
-        The base package includes standard configuration of the selected WordPress theme.
-        Advanced design customization and content migration are available as optional services.
-        Costs are based on an estimated blended hourly rate of 3,000 MZN/hour.
-    </p>
 </section>
 
 <section>
-    <h2><span>4.</span> Recurring Costs (Annual)</h2>
+    <h2><span>3.</span> Recurring Costs (Annual)</h2>
 
     <table>
         <thead>
@@ -496,163 +483,113 @@
         </thead>
         <tbody>
             <tr>
-                <td><strong>Managed Hosting (Regional - Mozambique/South Africa)</strong></td>
-                <td>Secure, high-performance hosting on servers located in Mozambique or South Africa. Includes SSL certificate, daily backups, and continuous uptime monitoring.</td>
-                <td>19,125.00 – 38,250.00</td>
+                <td data-label="Service"><strong>Regional Hosting</strong></td>
+                <td data-label="Description">Mozambique/South Africa servers. SSL, backups, monitoring.</td>
+                <td data-label="Annual Cost">19,125.00 – 38,250.00</td>
             </tr>
             <tr>
-                <td><strong>Managed Hosting (Global)</td>
-                <td>Secure, high-performance hosting on globally distributed servers (e.g., Europe, US) for maximum international reach and redundancy. Includes SSL, backups, uptime monitoring.</td>
-                <td>31,875.00 – 63,750.00</td>
+                <td data-label="Service"><strong>Global Hosting</strong></td>
+                <td data-label="Description">Global CDN servers (EU/US). High redundancy.</td>
+                <td data-label="Annual Cost">31,875.00 – 63,750.00</td>
             </tr>
             <tr>
-                <td><strong>Technical Maintenance & Support</strong></td>
-                <td>Regular WordPress core and plugin updates, proactive security monitoring, off-site backups, and minor technical support (up to 10 hours/year) to ensure smooth operation.</td>
-                <td>51,000.00 – 76,500.00</td>
+                <td data-label="Service"><strong>Maintenance</strong></td>
+                <td data-label="Description">Updates, security patches, off-site backups, minor support.</td>
+                <td data-label="Annual Cost">51,000.00 – 76,500.00</td>
             </tr>
             <tr class="total-row">
-                <td colspan="2">Total Annual Recurring Cost (with Regional Hosting)</td>
-                <td>70,125.00 – 114,750.00</td>
-            </tr>
-            <tr class="total-row">
-                <td colspan="2">Total Annual Recurring Cost (with Global Hosting)</td>
-                <td>82,875.00 – 140,250.00</td>
+                <td colspan="2" data-label="Summary">Total Annual (Regional Hosting)</td>
+                <td data-label="Total Cost">70,125.00 – 114,750.00</td>
             </tr>
         </tbody>
     </table>
-    <p class="table-note">
-        <em>Clients can choose the hosting option that best suits their audience and performance needs.</em>
-    </p>
 </section>
 
 <section>
-    <h2><span>5.</span> Estimated Timeline</h2>
+    <h2><span>4.</span> Estimated Timeline</h2>
 
     <table>
         <thead>
             <tr>
                 <th>Phase</th>
                 <th>Base Scope</th>
-                <th>With Optional Enhancements</th>
+                <th>With Options</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Planning & Theme Selection</td>
-                <td>1 week</td>
-                <td>1 week</td>
+                <td data-label="Phase">Planning & Setup</td>
+                <td data-label="Base Scope">2 – 3 weeks</td>
+                <td data-label="With Options">3 – 4 weeks</td>
             </tr>
             <tr>
-                <td>Setup & Architecture</td>
-                <td>1 – 2 weeks</td>
-                <td>2 weeks</td>
+                <td data-label="Phase">Development</td>
+                <td data-label="Base Scope">2 – 3 weeks</td>
+                <td data-label="With Options">4 – 6 weeks</td>
             </tr>
             <tr>
-                <td>Core Development & Modules</td>
-                <td>2 – 3 weeks</td>
-                <td>3 – 4 weeks</td>
-            </tr>
-            <tr>
-                <td>Design Customization & Branding</td>
-                <td>—</td>
-                <td>2 – 3 weeks</td>
-            </tr>
-            <tr>
-                <td>Optional Integrations</td>
-                <td>—</td>
-                <td>1 – 2 weeks</td>
-            </tr>
-            <tr>
-                <td>Testing, QA & Launch</td>
-                <td>1 week</td>
-                <td>1 – 2 weeks</td>
+                <td data-label="Phase">QA & Launch</td>
+                <td data-label="Base Scope">1 week</td>
+                <td data-label="With Options">1 – 2 weeks</td>
             </tr>
             <tr class="total-row">
-                <td>Total Estimated Timeline</td>
-                <td>5 – 7 weeks</td>
-                <td>8 – 12 weeks</td>
+                <td data-label="Total">Total Timeline</td>
+                <td data-label="Base Scope">5 – 7 weeks</td>
+                <td data-label="With Options">8 – 12 weeks</td>
             </tr>
         </tbody>
     </table>
 </section>
 
 <section>
-    <h2><span>6.</span> Optional Modules & Additional Services</h2>
+    <h2><span>5.</span> Optional Modules</h2>
 
     <table>
         <thead>
             <tr>
                 <th>Optional Component</th>
-                <th>Description</th>
                 <th>Est. Hours</th>
                 <th>Indicative Cost (MZN)</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><strong>Design Customization & Branding</strong></td>
-                <td>Advanced visual customization aligned with AMER’s institutional identity, including custom layouts, specific brand elements, and refined typography.</td>
-                <td>30 – 50</td>
-                <td>120,000.00 – 200,000.00</td>
+                <td data-label="Component"><strong>Design Customization</strong><br><small>Advanced visual branding & layout.</small></td>
+                <td data-label="Est. Hours">30 – 50</td>
+                <td data-label="Cost">120,000 – 200,000</td>
             </tr>
             <tr>
-                <td><strong>Advanced SEO & Analytics Setup</strong></td>
-                <td>In-depth keyword research, advanced Google Analytics 4 (GA4) and Google Search Console integration, custom event tracking, and dashboard setup for performance monitoring.</td>
-                <td>15 – 25</td>
-                <td>60,000.00 – 100,000.00</td>
+                <td data-label="Component"><strong>Advanced SEO & Analytics</strong><br><small>GA4, Search Console, custom events.</small></td>
+                <td data-label="Est. Hours">15 – 25</td>
+                <td data-label="Cost">60,000 – 100,000</td>
             </tr>
             <tr>
-                <td><strong>Newsletter & CRM Integration</strong></td>
-                <td>Seamless integration with popular email marketing platforms (e.g., Mailchimp, Brevo) for subscriber management, and basic CRM (e.g., HubSpot free tier) for contact organization.</td>
-                <td>10 – 15</td>
-                <td>40,000.00 – 60,000.00</td>
+                <td data-label="Component"><strong>Newsletter & CRM</strong><br><small>Mailchimp/Brevo integrations.</small></td>
+                <td data-label="Est. Hours">10 – 15</td>
+                <td data-label="Cost">40,000 – 60,000</td>
             </tr>
             <tr>
-                <td><strong>Enhanced Event Management & Calendar</strong></td>
-                <td>Robust online event system with RSVP functionality, Google Calendar integration, event filtering, and detailed event pages.</td>
-                <td>20 – 35</td>
-                <td>80,000.00 – 140,000.00</td>
+                <td data-label="Component"><strong>Event Mgmt System</strong><br><small>RSVP, Calendar, Filtering.</small></td>
+                <td data-label="Est. Hours">20 – 35</td>
+                <td data-label="Cost">80,000 – 140,000</td>
             </tr>
             <tr>
-                <td><strong>Members-Only Secure Area</strong></td>
-                <td>Development of a secure, restricted access area for members to view exclusive content, download documents, and access private forums or resources.</td>
-                <td>30 – 50</td>
-                <td>120,000.00 – 200,000.00</td>
+                <td data-label="Component"><strong>Members Only Area</strong><br><small>Restricted content access.</small></td>
+                <td data-label="Est. Hours">30 – 50</td>
+                <td data-label="Cost">120,000 – 200,000</td>
             </tr>
             <tr>
-                <td><strong>Multilingual Workflow & Translation Tools</strong></td>
-                <td>Implementation of advanced translation management plugins (e.g., WPML, Polylang Pro) and editorial workflows to streamline content updates across languages.</td>
-                <td>10 – 15</td>
-                <td>40,000.00 – 60,000.00</td>
-            </tr>
-            <tr>
-                <td><strong>Social Media Feed Integration</strong></td>
-                <td>Displaying live feeds from AMER's official social media channels (e.g., Twitter, LinkedIn, Facebook) directly on the website.</td>
-                <td>5 – 8</td>
-                <td>20,000.00 – 32,000.00</td>
-            </tr>
-            <tr>
-                <td><strong>Interactive Map / Project Showcase</strong></td>
-                <td>Development of an interactive map to highlight project locations, member offices, or areas of operation, with clickable points for more information.</td>
-                <td>20 – 35</td>
-                <td>80,000.00 – 140,000.00</td>
-            </tr>
-            <tr>
-                <td><strong>Content Migration & Copyediting</strong></td>
-                <td>Assistance with migrating existing content from the current AMER website (up to X pages/posts), formatting for the new design, and basic copyediting for clarity and consistency.</td>
-                <td>Variable</td>
-                <td>40,000.00 – 80,000.00</td>
+                <td data-label="Component"><strong>Content Migration</strong><br><small>Moving data from old site.</small></td>
+                <td data-label="Est. Hours">Variable</td>
+                <td data-label="Cost">40,000 – 80,000</td>
             </tr>
         </tbody>
     </table>
-    <p class="table-note">
-        Estimated costs for optional modules are based on an average hourly rate of 4,000 MZN/hour. Final scope for these items will be defined through detailed discussions.
-    </p>
 </section>
 
 <section>
-    <h2><span>7.</span> Project Summary & Custom Quote</h2>
-    <p>Use the options below to build your customized project estimate. The total cost will update dynamically.</p>
+    <h2><span>6.</span> Interactive Quote Calculator</h2>
+    <p>Select options to update the total.</p>
 
     <table id="summary-table">
         <thead>
@@ -663,110 +600,81 @@
         </thead>
         <tbody>
             <tr>
-                <td><strong>Base Website Development</strong></td>
-                <td class="cost-cell" data-cost-min="189562.50" data-cost-max="292312.50">189,562.50 – 292,312.50</td>
+                <td data-label="Component"><strong>Base Website Development</strong></td>
+                <td class="cost-cell" data-label="Cost" data-cost-min="189562.50" data-cost-max="292312.50">189,562.50 – 292,312.50</td>
             </tr>
             <tr>
-                <td><strong>Annual Hosting Option:</strong></td>
-                <td>
+                <!-- No data-label needed for radio options container in CSS logic -->
+                <td colspan="2">
+                    <strong>Hosting Option:</strong><br><br>
                     <label class="option-label">
-                        <input type="radio" name="hosting" value="regional" data-cost-min="19125.00" data-cost-max="38250.00" checked> Regional (Mozambique/South Africa) <br>
-                        (19,125.00 – 38,250.00 MZN)
-                    </label><br>
+                        <input type="radio" name="hosting" value="regional" data-cost-min="19125.00" data-cost-max="38250.00" checked>
+                        <span>Regional (19k – 38k)</span>
+                    </label>
                     <label class="option-label">
-                        <input type="radio" name="hosting" value="global" data-cost-min="31875.00" data-cost-max="63750.00"> Global <br>
-                        (31,875.00 – 63,750.00 MZN)
-                    </label><br>
+                        <input type="radio" name="hosting" value="global" data-cost-min="31875.00" data-cost-max="63750.00">
+                        <span>Global (31k – 63k)</span>
+                    </label>
                     <label class="option-label">
-                        <input type="radio" name="hosting" value="multi-region" data-cost-min="51000.00" data-cost-max="102000.00"> Multi-Region (Regional + Global) <br>
-                        (51,000.00 – 102,000.00 MZN)
+                        <input type="radio" name="hosting" value="multi-region" data-cost-min="51000.00" data-cost-max="102000.00">
+                        <span>Multi-Region (51k – 102k)</span>
                     </label>
                 </td>
             </tr>
             <tr>
-                <td><strong>Annual Technical Maintenance & Support</strong></td>
-                <td class="cost-cell" data-cost-min="51000.00" data-cost-max="76500.00">51,000.00 – 76,500.00</td>
-            </tr>
-            <tr><td colspan="2"><hr style="border-top: 1px dashed var(--border);"></td></tr>
-            <tr><td colspan="2"><strong>Optional Modules & Services:</strong></td></tr>
-            <tr>
-                <td>
-                    <label class="option-label">
-                        <input type="checkbox" class="optional-module" data-cost-min="120000.00" data-cost-max="200000.00"> Design Customization & Branding
-                    </label>
-                </td>
-                <td class="cost-cell" data-cost-min="120000.00" data-cost-max="200000.00">120,000.00 – 200,000.00</td>
+                <td data-label="Component"><strong>Annual Maintenance</strong></td>
+                <td class="cost-cell" data-label="Cost" data-cost-min="51000.00" data-cost-max="76500.00">51,000 – 76,500</td>
             </tr>
             <tr>
-                <td>
-                    <label class="option-label">
-                        <input type="checkbox" class="optional-module" data-cost-min="60000.00" data-cost-max="100000.00"> Advanced SEO & Analytics Setup
-                    </label>
-                </td>
-                <td class="cost-cell" data-cost-min="60000.00" data-cost-max="100000.00">60,000.00 – 100,000.00</td>
+                <td colspan="2"><hr style="border: 0; border-top: 1px dashed #ccc;"><strong>Add Optional Modules:</strong></td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <label class="option-label">
-                        <input type="checkbox" class="optional-module" data-cost-min="40000.00" data-cost-max="60000.00"> Newsletter & CRM Integration
+                        <input type="checkbox" class="optional-module" data-cost-min="120000.00" data-cost-max="200000.00">
+                        <span>Design Customization (120k – 200k)</span>
                     </label>
                 </td>
-                <td class="cost-cell" data-cost-min="40000.00" data-cost-max="60000.00">40,000.00 – 60,000.00</td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <label class="option-label">
-                        <input type="checkbox" class="optional-module" data-cost-min="80000.00" data-cost-max="140000.00"> Enhanced Event Management & Calendar
+                        <input type="checkbox" class="optional-module" data-cost-min="60000.00" data-cost-max="100000.00">
+                        <span>SEO & Analytics (60k – 100k)</span>
                     </label>
                 </td>
-                <td class="cost-cell" data-cost-min="80000.00" data-cost-max="140000.00">80,000.00 – 140,000.00</td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <label class="option-label">
-                        <input type="checkbox" class="optional-module" data-cost-min="120000.00" data-cost-max="200000.00"> Members-Only Secure Area
+                        <input type="checkbox" class="optional-module" data-cost-min="40000.00" data-cost-max="60000.00">
+                        <span>Newsletter & CRM (40k – 60k)</span>
                     </label>
                 </td>
-                <td class="cost-cell" data-cost-min="120000.00" data-cost-max="200000.00">120,000.00 – 200,000.00</td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <label class="option-label">
-                        <input type="checkbox" class="optional-module" data-cost-min="40000.00" data-cost-max="60000.00"> Multilingual Workflow & Translation Tools
+                        <input type="checkbox" class="optional-module" data-cost-min="80000.00" data-cost-max="140000.00">
+                        <span>Event System (80k – 140k)</span>
                     </label>
                 </td>
-                <td class="cost-cell" data-cost-min="40000.00" data-cost-max="60000.00">40,000.00 – 60,000.00</td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <label class="option-label">
-                        <input type="checkbox" class="optional-module" data-cost-min="20000.00" data-cost-max="32000.00"> Social Media Feed Integration
+                        <input type="checkbox" class="optional-module" data-cost-min="120000.00" data-cost-max="200000.00">
+                        <span>Members Area (120k – 200k)</span>
                     </label>
                 </td>
-                <td class="cost-cell" data-cost-min="20000.00" data-cost-max="32000.00">20,000.00 – 32,000.00</td>
             </tr>
-            <tr>
-                <td>
-                    <label class="option-label">
-                        <input type="checkbox" class="optional-module" data-cost-min="80000.00" data-cost-max="140000.00"> Interactive Map / Project Showcase
-                    </label>
-                </td>
-                <td class="cost-cell" data-cost-min="80000.00" data-cost-max="140000.00">80,000.00 – 140,000.00</td>
-            </tr>
-            <tr>
-                <td>
-                    <label class="option-label">
-                        <input type="checkbox" class="optional-module" data-cost-min="40000.00" data-cost-max="80000.00"> Content Migration & Copyediting
-                    </label>
-                </td>
-                <td class="cost-cell" data-cost-min="40000.00" data-cost-max="80000.00">40,000.00 – 80,000.00</td>
-            </tr>
+            
             <tr class="total-row-summary">
-                <td>Estimated Project Total (One-time)</td>
+                <td data-label="Summary">One-time Project Total</td>
                 <td id="project-total-onetime" class="cost-cell">0 MZN</td>
             </tr>
             <tr class="total-row-summary">
-                <td>Estimated Annual Recurring Total</td>
+                <td data-label="Summary">Annual Recurring Total</td>
                 <td id="project-total-recurring" class="cost-cell">0 MZN</td>
             </tr>
         </tbody>
@@ -775,68 +683,32 @@
 
 <footer>
     <p>
-        This proposal is indicative and subject to adjustment based on final scope definition,
-        content availability, and detailed stakeholder feedback. We are eager to discuss
-        this proposal further and tailor it precisely to AMER's strategic objectives.
-    </p>
-    <p>
-        We look forward to the opportunity to partner with AMER on this important project.
+        Subject to adjustment based on final scope definition.
     </p>
 </footer>
 
 </div>
 
 <script>
-    const baseHourlyRateMZN = 3000; 
-    const optionalHourlyRateMZN = 4000;
-
-    const themeCostMinMZN = 9562.50; 
-    const themeCostMaxMZN = 22312.50; 
-    const themeCostMidMZN = (themeCostMinMZN + themeCostMaxMZN) / 2;
-
-    const maintenanceCostMinMZN = 51000.00; 
-    const maintenanceCostMaxMZN = 76500.00; 
-    const maintenanceCostMidMZN = (maintenanceCostMinMZN + maintenanceCostMaxMZN) / 2;
-
+    const themeCostMidMZN = (9562.50 + 22312.50) / 2;
+    const maintenanceCostMidMZN = (51000.00 + 76500.00) / 2;
+    const baseDevCostMidMZN = (180000 + 270000) / 2; 
 
     function calculateTotal() {
-        const setupArchitectureHoursMin = 20;
-        const setupArchitectureHoursMax = 30;
-        const coreModulesHoursMin = 40;
-        const coreModulesHoursMax = 60;
-
-        const baseDevelopmentCostMinMZN_Calc = (setupArchitectureHoursMin + coreModulesHoursMin) * baseHourlyRateMZN;
-        const baseDevelopmentCostMaxMZN_Calc = (setupArchitectureHoursMax + coreModulesHoursMax) * baseHourlyRateMZN;
-        const baseDevelopmentCostMidMZN_Calc = (baseDevelopmentCostMinMZN_Calc + baseDevelopmentCostMaxMZN_Calc) / 2;
-
-        let currentOneTimeTotalMZN = baseDevelopmentCostMidMZN_Calc + themeCostMidMZN;
+        let currentOneTimeTotalMZN = baseDevCostMidMZN + themeCostMidMZN;
         let currentRecurringTotalMZN = maintenanceCostMidMZN;
 
-        // Hosting selection (data attributes are already in MZN)
-        const hostingRegionalRadio = document.querySelector('input[name="hosting"][value="regional"]');
-        const hostingGlobalRadio = document.querySelector('input[name="hosting"][value="global"]');
-        const hostingMultiRegionRadio = document.querySelector('input[name="hosting"][value="multi-region"]');
-        
-        let selectedHostingCostMZN = 0;
-        if (hostingRegionalRadio.checked) {
-            selectedHostingCostMZN = (parseFloat(hostingRegionalRadio.dataset.costMin) + parseFloat(hostingRegionalRadio.dataset.costMax)) / 2;
-        } else if (hostingGlobalRadio.checked) {
-            selectedHostingCostMZN = (parseFloat(hostingGlobalRadio.dataset.costMin) + parseFloat(hostingGlobalRadio.dataset.costMax)) / 2;
-        } else if (hostingMultiRegionRadio.checked) {
-             selectedHostingCostMZN = (parseFloat(hostingMultiRegionRadio.dataset.costMin) + parseFloat(hostingMultiRegionRadio.dataset.costMax)) / 2;
+        // Hosting
+        const selectedHosting = document.querySelector('input[name="hosting"]:checked');
+        if(selectedHosting) {
+            const cost = (parseFloat(selectedHosting.dataset.costMin) + parseFloat(selectedHosting.dataset.costMax)) / 2;
+            currentRecurringTotalMZN += cost;
         }
-        currentRecurringTotalMZN += selectedHostingCostMZN;
 
-
-        // Optional modules (data attributes are already in MZN)
-        document.querySelectorAll('.optional-module').forEach(checkbox => {
-            if (checkbox.checked) {
-                const costMinMZN_Option = parseFloat(checkbox.dataset.costMin);
-                const costMaxMZN_Option = parseFloat(checkbox.dataset.costMax);
-                const midCostMZN_Option = (costMinMZN_Option + costMaxMZN_Option) / 2;
-
-                currentOneTimeTotalMZN += midCostMZN_Option;
-            }
+        // Optional modules
+        document.querySelectorAll('.optional-module:checked').forEach(checkbox => {
+            const cost = (parseFloat(checkbox.dataset.costMin) + parseFloat(checkbox.dataset.costMax)) / 2;
+            currentOneTimeTotalMZN += cost;
         });
 
         document.getElementById('project-total-onetime').textContent = formatMZN(currentOneTimeTotalMZN);
@@ -844,15 +716,14 @@
     }
 
     function formatMZN(amount) {
-        return amount.toLocaleString('en-US', { style: 'currency', currency: 'MZN', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        return amount.toLocaleString('en-US', { style: 'currency', currency: 'MZN', minimumFractionDigits: 0, maximumFractionDigits: 0 });
     }
 
-    // Attach event listeners
     document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('input[type="radio"], .optional-module').forEach(input => {
+        document.querySelectorAll('input').forEach(input => {
             input.addEventListener('change', calculateTotal);
         });
-        calculateTotal(); // Calculate initial total on page load
+        calculateTotal();
     });
 </script>
 
