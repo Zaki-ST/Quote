@@ -154,11 +154,11 @@
                 width: 100%;
                 background: #fff;
                 border: 1px solid var(--border);
-                border-radius: 12px; /* Rounded corners for the whole group */
-                box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* One shadow for the group */
+                border-radius: 12px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.08);
                 margin-top: 15px;
                 margin-bottom: 40px;
-                overflow: hidden; /* Clips corners */
+                overflow: hidden;
             }
 
             thead { display: none; } /* Hide headers */
@@ -173,7 +173,7 @@
             }
             tr:last-child { border-bottom: none; }
             
-            /* Zebra striping disabled for grouped card look, prefer clean white */
+            /* Zebra striping disabled for grouped card look */
             tr:nth-child(even) td { background-color: #fff; }
 
             /* Cells */
@@ -203,9 +203,6 @@
                 display: none; 
             }
 
-            /* Adjust spacing for text */
-            td p { margin-bottom: 0; }
-            
             /* Cost Styling */
             .cost-cell { 
                 text-align: left; 
@@ -214,25 +211,26 @@
                 padding-top: 5px;
             }
 
-            /* Total Row Styling in Mobile */
+            /* --- FIX: Total Row Styling in Mobile (Forced Dark Mode) --- */
             .total-row, .total-row-summary {
-                background-color: var(--accent-light);
+                background-color: var(--primary); /* Force Dark Blue Background */
             }
             .total-row td, .total-row-summary td {
                 background: transparent;
                 text-align: center;
                 border-top: none;
+                color: white; /* Force White Text */
             }
             .total-row td::before, .total-row-summary td::before {
                 text-align: center;
                 margin-bottom: 5px;
-                color: var(--text-light);
+                color: rgba(255, 255, 255, 0.7); /* Light gray for label */
             }
             
             /* Make the final price pop */
             .total-row-summary .cost-cell {
                 background: transparent;
-                color: var(--primary);
+                color: #fff; /* White numbers */
                 font-size: 1.6em;
                 text-align: center;
                 padding: 0;
