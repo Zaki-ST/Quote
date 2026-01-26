@@ -211,29 +211,35 @@
                 padding-top: 5px;
             }
 
-            /* --- FIX: Total Row Styling in Mobile (Forced Dark Mode) --- */
-            .total-row, .total-row-summary {
-                background-color: var(--primary); /* Force Dark Blue Background */
-            }
-            .total-row td, .total-row-summary td {
-                background: transparent;
-                text-align: center;
-                border-top: none;
-                color: white; /* Force White Text */
-            }
-            .total-row td::before, .total-row-summary td::before {
-                text-align: center;
-                margin-bottom: 5px;
-                color: rgba(255, 255, 255, 0.7); /* Light gray for label */
+            /* --- FIX: Strict Total Row Styling in Mobile --- */
+            /* We use !important to override the nth-child(even) white background */
+            tr.total-row, tr.total-row-summary {
+                background-color: var(--primary) !important;
+                border-bottom: none;
             }
             
-            /* Make the final price pop */
-            .total-row-summary .cost-cell {
-                background: transparent;
-                color: #fff; /* White numbers */
-                font-size: 1.6em;
+            tr.total-row td, tr.total-row-summary td {
+                background-color: var(--primary) !important; /* Force Dark Blue */
+                color: #ffffff !important; /* Force White Text */
+                text-align: center;
+                border-top: none;
+                padding: 20px;
+            }
+            
+            /* Ensure the Cost Cell inside the total row is white */
+            tr.total-row-summary .cost-cell {
+                background: transparent !important;
+                color: #ffffff !important;
+                font-size: 1.8em;
                 text-align: center;
                 padding: 0;
+            }
+
+            /* The little "Total" label inside the cell */
+            tr.total-row td::before, tr.total-row-summary td::before {
+                text-align: center;
+                margin-bottom: 5px;
+                color: rgba(255, 255, 255, 0.7) !important;
             }
 
             /* Calculator specific spacing */
