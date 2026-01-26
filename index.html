@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-dark: #0A2E44; /* Darker primary for headings */
+            --primary-dark: #0A2E44;
             --primary: #0f3d57;
             --secondary: #2c7da0;
             --accent-light: #e0f2f7;
@@ -25,17 +25,17 @@
             color: var(--text-dark);
             line-height: 1.7;
             margin: 0;
-            background: var(--light-gray); /* Light background for the whole page */
+            background: var(--light-gray);
             padding: 40px 0;
         }
 
         .container {
-            max-width: 960px; /* Slightly wider container */
+            max-width: 960px;
             margin: 0 auto;
-            padding: 40px 50px; /* More padding */
+            padding: 40px 50px;
             background: var(--bg-light);
-            border-radius: 12px; /* Rounded corners for the main document */
-            box-shadow: 0 10px 30px var(--shadow-medium); /* More pronounced shadow */
+            border-radius: 12px;
+            box-shadow: 0 10px 30px var(--shadow-medium);
         }
 
         header {
@@ -47,12 +47,13 @@
 
         header h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 3.2em; /* Larger, bolder heading */
+            font-size: 3.2em;
             color: var(--primary-dark);
             margin-bottom: 10px;
             position: relative;
             display: inline-block;
             padding-bottom: 15px;
+            line-height: 1.2;
         }
 
         header h1::after {
@@ -77,7 +78,7 @@
         section {
             margin-bottom: 60px;
             padding-top: 30px;
-            border-top: 1px dashed var(--border); /* Dashed border for sections */
+            border-top: 1px dashed var(--border);
         }
 
         section:first-of-type {
@@ -89,21 +90,21 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 2em;
             color: var(--primary-dark);
-            border-left: 8px solid var(--secondary); /* Thicker, bolder accent line */
+            border-left: 8px solid var(--secondary);
             padding-left: 20px;
             margin-bottom: 35px;
             font-weight: 700;
             line-height: 1.2;
-            display: flex; /* Use flexbox for number and text alignment */
+            display: flex;
             align-items: center;
         }
 
         h2 span {
-            font-size: 0.8em; /* Make numbers a bit larger */
-            font-weight: 600; /* Bolder numbers */
-            color: var(--secondary); /* Give numbers an accent color */
-            margin-right: 15px; /* More space between number and text */
-            flex-shrink: 0; /* Prevent number from shrinking */
+            font-size: 0.8em;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-right: 15px;
+            flex-shrink: 0;
         }
 
         p {
@@ -113,7 +114,7 @@
 
         ul {
             padding-left: 30px;
-            list-style: none; /* Custom bullets */
+            list-style: none;
         }
 
         ul li {
@@ -123,7 +124,7 @@
         }
 
         ul li::before {
-            content: '✓'; /* Checkmark bullet */
+            content: '✓';
             color: var(--secondary);
             font-weight: 700;
             position: absolute;
@@ -133,18 +134,18 @@
 
         table {
             width: 100%;
-            border-collapse: separate; /* Use separate to allow border-spacing/radius */
+            border-collapse: separate;
             border-spacing: 0;
             margin-top: 30px;
             font-size: 0.95em;
             border: 1px solid var(--border);
-            border-radius: 8px; /* Rounded corners for tables */
-            overflow: hidden; /* Ensures content stays within rounded corners */
+            border-radius: 8px;
+            overflow: hidden;
             box-shadow: 0 5px 15px var(--shadow-light);
         }
 
         table thead th {
-            background-color: var(--primary); /* Darker header background */
+            background-color: var(--primary);
             color: white;
             text-align: left;
             padding: 18px 20px;
@@ -156,9 +157,9 @@
 
         table tbody td {
             padding: 18px 20px;
-            border-bottom: 1px solid var(--light-gray); /* Lighter border for rows */
-            vertical-align: middle; /* Center content vertically */
-            background-color: var(--bg-light); /* Ensure white background */
+            border-bottom: 1px solid var(--light-gray);
+            vertical-align: middle;
+            background-color: var(--bg-light);
         }
 
         table tbody tr:last-child td {
@@ -166,12 +167,12 @@
         }
 
         table tbody tr:nth-child(even) td {
-            background-color: var(--light-gray); /* Zebra striping for readability */
+            background-color: var(--light-gray);
         }
 
         table tbody tr.total-row td {
             font-weight: 700;
-            background-color: var(--accent-light); /* Accent background for total rows */
+            background-color: var(--accent-light);
             border-top: 2px solid var(--secondary);
             font-size: 1.1em;
             color: var(--primary-dark);
@@ -195,13 +196,13 @@
             list-style: none;
             padding: 0;
         }
-        /* Specific styling for highlight-box list items */
+        
         .highlight-box ul li {
-            padding-left: 25px; /* Adjust padding for arrow */
+            padding-left: 25px;
             position: relative;
         }
         .highlight-box ul li::before {
-            content: '➔'; /* Arrow for highlight box list */
+            content: '➔';
             color: var(--primary);
             font-weight: 700;
             position: absolute;
@@ -220,23 +221,23 @@
 
         /* --- Modern Summary Table Styles --- */
         #summary-table {
-            border: none; /* Remove outer border */
-            border-radius: 12px; /* More rounded */
-            box-shadow: 0 15px 40px var(--shadow-medium); /* Stronger shadow */
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); /* Gradient background */
-            color: white; /* White text for header */
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px var(--shadow-medium);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
             margin-bottom: 40px;
         }
         #summary-table thead th {
-            background-color: transparent; /* No background color, let gradient show */
-            border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* Lighter border for contrast */
+            background-color: transparent;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
             padding: 20px 25px;
             font-family: 'Montserrat', sans-serif;
             font-size: 1.1em;
             font-weight: 700;
         }
         #summary-table tbody td {
-            background-color: var(--bg-light); /* White background for body rows */
+            background-color: var(--bg-light);
             color: var(--text-dark);
             padding: 15px 25px;
             border-bottom: 1px dashed var(--border);
@@ -248,28 +249,28 @@
             text-align: right;
             font-weight: 700;
             min-width: 150px;
-            color: var(--secondary); /* Highlight costs with secondary color */
+            color: var(--secondary);
             font-family: 'Montserrat', sans-serif;
         }
         #summary-table .total-row-summary {
-            background-color: var(--primary); /* Keep consistent total row background for summary */
+            background-color: var(--primary);
             color: white;
             font-weight: bold;
             font-size: 1.3em;
             border-top: 2px solid var(--secondary);
         }
         #summary-table .total-row-summary .cost-cell {
-            color: white; /* White for final total */
+            color: white;
             font-size: 1.4em;
             font-weight: 700;
-            background-color: var(--secondary); /* Distinct background for final cost */
+            background-color: var(--secondary);
         }
         .option-label {
             display: flex;
             align-items: center;
-            gap: 15px; /* More space */
+            gap: 15px;
             font-weight: 400;
-            cursor: pointer; /* Indicate interactivity */
+            cursor: pointer;
             transition: color 0.2s ease;
         }
         .option-label:hover {
@@ -277,8 +278,8 @@
         }
         .option-label input[type="radio"],
         .option-label input[type="checkbox"] {
-            transform: scale(1.4); /* Larger checkboxes/radios */
-            accent-color: var(--primary); /* Accent color for interactive elements */
+            transform: scale(1.4);
+            accent-color: var(--primary);
             cursor: pointer;
         }
         .table-note {
@@ -287,6 +288,69 @@
             margin-top:15px;
             padding-left: 10px;
             font-style: italic;
+        }
+
+        /* --- MOBILE RESPONSIVENESS (ADDED) --- */
+        @media screen and (max-width: 768px) {
+            
+            body {
+                padding: 10px 0; /* Less padding on outer body */
+            }
+
+            .container {
+                width: auto;
+                margin: 10px;
+                padding: 30px 20px; /* Reduced side padding significantly */
+            }
+
+            header h1 {
+                font-size: 1.8em; /* Smaller title */
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.5em; /* Smaller headings */
+                padding-left: 15px;
+            }
+            
+            /* Make tables scrollable horizontally so they don't break layout */
+            table {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* Ensure columns don't get too squished inside the scrollable area */
+            th, td {
+                min-width: 120px; 
+            }
+            /* Give description columns more width */
+            td:nth-child(2) {
+                min-width: 200px;
+            }
+
+            /* Adjust highlight box */
+            .highlight-box {
+                padding: 20px;
+                margin: 20px 0;
+            }
+
+            /* Fix option labels (Radios/Checkboxes) */
+            .option-label {
+                align-items: flex-start; /* Top align if text wraps */
+                gap: 10px;
+                font-size: 0.95em;
+            }
+
+            .option-label input[type="radio"],
+            .option-label input[type="checkbox"] {
+                margin-top: 5px; /* Visual alignment with text */
+                flex-shrink: 0; /* Prevent icon shrinking */
+            }
         }
     </style>
 </head>
