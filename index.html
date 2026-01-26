@@ -26,7 +26,7 @@
         body {
             font-family: 'Open Sans', sans-serif;
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.8; /* Increased line height for better readability */
             margin: 0;
             background: var(--light-gray);
             padding: 40px 0;
@@ -47,25 +47,27 @@
         
         header { text-align: center; margin-bottom: 50px; border-bottom: 1px solid var(--border); padding-bottom: 30px; }
         header h1 { font-size: 2.5em; margin-bottom: 10px; line-height: 1.2; }
-        header p { font-size: 1.1em; color: var(--text-light); margin-top: 10px; }
+        header p { font-size: 1.1em; color: var(--text-light); margin-top: 15px; }
         
         /* Decorative underline for H1 */
         header h1::after {
             content: ''; display: block; width: 60px; height: 4px; 
-            background: var(--secondary); margin: 15px auto 0; border-radius: 2px;
+            background: var(--secondary); margin: 20px auto 0; border-radius: 2px;
         }
 
-        section { margin-bottom: 50px; padding-top: 30px; border-top: 1px dashed var(--border); }
+        section { margin-bottom: 60px; padding-top: 30px; border-top: 1px dashed var(--border); }
         section:first-of-type { border-top: none; padding-top: 0; }
 
         h2 {
             font-size: 1.8em; border-left: 5px solid var(--secondary);
-            padding-left: 15px; margin-bottom: 25px; display: flex; align-items: center;
+            padding-left: 20px; margin-bottom: 30px; display: flex; align-items: center;
         }
         h2 span { color: var(--secondary); font-size: 0.7em; margin-right: 15px; font-weight: 700; }
 
+        p { margin-bottom: 20px; }
+
         ul { padding-left: 20px; list-style: none; }
-        ul li { margin-bottom: 10px; position: relative; padding-left: 25px; }
+        ul li { margin-bottom: 15px; position: relative; padding-left: 30px; }
         ul li::before {
             content: '✓'; color: var(--secondary); font-weight: bold;
             position: absolute; left: 0; top: 0;
@@ -73,18 +75,19 @@
 
         .highlight-box {
             background: var(--accent-light); border-left: 5px solid var(--secondary);
-            padding: 20px; border-radius: 5px; margin: 30px 0;
+            padding: 25px; border-radius: 5px; margin: 30px 0;
+            font-weight: 500;
         }
 
         /* --- DESKTOP TABLE STYLES --- */
         table {
             width: 100%; border-collapse: collapse; margin-top: 25px;
             background: #fff; border: 1px solid var(--border);
-            border-radius: 8px; overflow: hidden; /* For rounded corners */
+            border-radius: 8px; overflow: hidden;
         }
         
-        th { background: var(--primary); color: #fff; text-align: left; padding: 15px; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.5px; }
-        td { padding: 15px; border-bottom: 1px solid var(--light-gray); vertical-align: top; font-size: 0.95em; }
+        th { background: var(--primary); color: #fff; text-align: left; padding: 18px; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.5px; }
+        td { padding: 18px; border-bottom: 1px solid var(--light-gray); vertical-align: top; font-size: 0.95em; }
         
         tr:nth-child(even) { background-color: var(--light-gray); }
         tr:last-child td { border-bottom: none; }
@@ -99,7 +102,7 @@
         #summary-table thead th { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); }
         
         /* Cost Cells */
-        .cost-cell { text-align: right; font-weight: 700; color: var(--secondary); white-space: nowrap; }
+        .cost-cell { text-align: right; font-weight: 700; color: var(--secondary); white-space: nowrap; font-family: 'Montserrat', sans-serif; }
         
         /* Final Total Rows */
         .total-row-summary td {
@@ -109,72 +112,85 @@
 
         /* Form Inputs */
         .option-label {
-            display: flex; align-items: flex-start; gap: 10px; cursor: pointer;
-            padding: 5px 0; transition: color 0.2s;
+            display: flex; align-items: flex-start; gap: 15px; cursor: pointer;
+            padding: 8px 0; transition: color 0.2s;
         }
         .option-label:hover { color: var(--secondary); }
         input[type="checkbox"], input[type="radio"] {
-            transform: scale(1.3); margin-top: 4px; accent-color: var(--primary); cursor: pointer;
+            transform: scale(1.3); margin-top: 6px; accent-color: var(--primary); cursor: pointer; flex-shrink: 0;
         }
 
-        footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center; font-size: 0.9em; color: var(--text-light); }
+        footer { margin-top: 80px; padding-top: 30px; border-top: 1px solid var(--border); text-align: center; font-size: 0.9em; color: var(--text-light); }
 
         /* =========================================
-           MOBILE RESPONSIVENESS (Card View)
+           MOBILE RESPONSIVENESS (Optimized Card View)
            ========================================= */
         @media screen and (max-width: 768px) {
-            body { padding: 0; background: #fff; } /* Remove gray bg on mobile */
+            body { padding: 0; background: #fff; line-height: 1.6; }
             
             .container {
-                padding: 20px 15px; /* Reduce padding */
+                padding: 25px 20px; /* More breathing room on edges */
                 box-shadow: none; border-radius: 0;
             }
 
-            header h1 { font-size: 1.8em; }
-            h2 { font-size: 1.4em; }
+            header h1 { font-size: 1.8em; margin-bottom: 15px; }
+            h2 { font-size: 1.5em; padding-left: 15px; }
 
-            /* Force table to display as blocks */
+            /* Force table to display as blocks (Cards) */
             table, thead, tbody, th, td, tr { display: block; width: 100%; }
             
-            /* Hide headers visually but keep for accessibility */
+            /* Hide headers visually */
             thead tr { position: absolute; top: -9999px; left: -9999px; }
 
-            table { border: none; margin-top: 10px; }
+            table { border: none; margin-top: 15px; }
             
             /* Card Style for Rows */
             tbody tr {
-                margin-bottom: 20px; border: 1px solid var(--border);
-                border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+                margin-bottom: 25px; /* More space between cards */
+                border: 1px solid var(--border);
+                border-radius: 12px; /* Softer corners */
+                box-shadow: 0 4px 10px rgba(0,0,0,0.06);
                 overflow: hidden;
             }
 
             tbody td {
-                padding: 10px 15px; padding-left: 15px; /* Standard padding */
+                padding: 15px 20px; /* Larger touch targets inside cards */
                 position: relative; text-align: left;
-                border-bottom: 1px solid #eee;
+                border-bottom: 1px solid #f0f0f0;
             }
 
-            /* Add Label before content using data-label */
+            /* The Label (e.g. "Estimated Cost") */
             tbody td::before {
                 content: attr(data-label);
-                display: block; font-size: 0.75em; font-weight: 700;
-                text-transform: uppercase; color: var(--secondary);
-                margin-bottom: 5px;
+                display: block; 
+                font-size: 0.75em; 
+                font-weight: 700;
+                text-transform: uppercase; 
+                color: #888; /* Lighter color to distinguish from content */
+                margin-bottom: 8px; /* Space between label and value */
+                letter-spacing: 0.5px;
             }
 
             /* Tweaks for the Calculator Table on Mobile */
-            #summary-table tbody tr { margin-bottom: 15px; }
+            #summary-table tbody tr { margin-bottom: 20px; }
             
-            /* Align right-aligned costs to left on mobile for readability */
-            .cost-cell { text-align: left; margin-top: 5px; }
+            /* Align right-aligned costs to left on mobile */
+            .cost-cell { text-align: left; margin-top: 5px; color: var(--primary-dark); font-size: 1.1em; }
             
-            /* Hide label for Radio/Checkbox rows to save space */
+            /* Hide label for Radio/Checkbox rows so they take full width naturally */
             td:has(input)::before { display: none; }
             
             /* Final Total Rows Mobile */
-            .total-row-summary td { text-align: center; padding: 15px; }
-            .total-row-summary td::before { color: rgba(255,255,255,0.7); text-align: center; }
-            .total-row-summary .cost-cell { background: var(--secondary); text-align: center; }
+            .total-row-summary td { text-align: center; padding: 20px; }
+            .total-row-summary td::before { color: rgba(255,255,255,0.7); text-align: center; margin-bottom: 5px; }
+            .total-row-summary .cost-cell { background: var(--secondary); text-align: center; font-size: 1.4em; }
+
+            /* Fix Radio Buttons spacing */
+            .option-label {
+                padding: 10px 0;
+                border-bottom: 1px dashed #eee;
+            }
+            .option-label:last-child { border-bottom: none; }
         }
     </style>
 </head>
@@ -226,23 +242,23 @@
                     <td data-label="Component"><strong>Premium Theme & Licensing</strong></td>
                     <td data-label="Description">Purchase of professional vendor theme.</td>
                     <td data-label="Est. Hours">—</td>
-                    <td data-label="Cost">9,562.50 – 22,312.50</td>
+                    <td data-label="Cost">9,562 – 22,312</td>
                 </tr>
                 <tr>
                     <td data-label="Component"><strong>Setup & Architecture</strong></td>
                     <td data-label="Description">WP Installation, Bilingual setup, Menu structure.</td>
                     <td data-label="Est. Hours">20 – 30</td>
-                    <td data-label="Cost">60,000.00 – 90,000.00</td>
+                    <td data-label="Cost">60,000 – 90,000</td>
                 </tr>
                 <tr>
                     <td data-label="Component"><strong>Core Modules</strong></td>
                     <td data-label="Description">News, Events, Directory, Contact Forms, SEO Basic.</td>
                     <td data-label="Est. Hours">40 – 60</td>
-                    <td data-label="Cost">120,000.00 – 180,000.00</td>
+                    <td data-label="Cost">120,000 – 180,000</td>
                 </tr>
                 <tr class="total-row">
                     <td colspan="3" data-label="Total Label">Total Development (One-Time)</td>
-                    <td data-label="Total Cost">189,562.50 – 292,312.50</td>
+                    <td data-label="Total Cost">189,562 – 292,312</td>
                 </tr>
             </tbody>
         </table>
@@ -262,17 +278,17 @@
                 <tr>
                     <td data-label="Service"><strong>Hosting (Regional)</strong></td>
                     <td data-label="Description">Mozambique/SA Servers. SSL & Backups included.</td>
-                    <td data-label="Annual Cost">19,125.00 – 38,250.00</td>
+                    <td data-label="Annual Cost">19,125 – 38,250</td>
                 </tr>
                 <tr>
                     <td data-label="Service"><strong>Hosting (Global)</strong></td>
                     <td data-label="Description">Global CDN (EU/US). High redundancy.</td>
-                    <td data-label="Annual Cost">31,875.00 – 63,750.00</td>
+                    <td data-label="Annual Cost">31,875 – 63,750</td>
                 </tr>
                 <tr>
                     <td data-label="Service"><strong>Maintenance</strong></td>
                     <td data-label="Description">Security updates, plugin management, support.</td>
-                    <td data-label="Annual Cost">51,000.00 – 76,500.00</td>
+                    <td data-label="Annual Cost">51,000 – 76,500</td>
                 </tr>
             </tbody>
         </table>
@@ -293,7 +309,7 @@
                 <!-- Base Cost -->
                 <tr>
                     <td data-label="Component"><strong>Base Website Development</strong></td>
-                    <td class="cost-cell" data-label="Cost" data-cost-min="189562.50" data-cost-max="292312.50">189,562 – 292,312</td>
+                    <td class="cost-cell" data-label="Cost" data-cost-min="189562" data-cost-max="292312">189,562 – 292,312</td>
                 </tr>
 
                 <!-- Hosting Options -->
@@ -302,15 +318,15 @@
                         <strong>Annual Hosting Plan:</strong><br><br>
                         <label class="option-label">
                             <input type="radio" name="hosting" value="regional" data-cost-min="19125" data-cost-max="38250" checked>
-                            Regional (Mozambique/SA)
+                            <span>Regional (Mozambique/SA) <br><strong>19,125 – 38,250</strong></span>
                         </label>
                         <label class="option-label">
                             <input type="radio" name="hosting" value="global" data-cost-min="31875" data-cost-max="63750">
-                            Global (High Performance)
+                            <span>Global (High Performance) <br><strong>31,875 – 63,750</strong></span>
                         </label>
                         <label class="option-label">
                             <input type="radio" name="hosting" value="multi" data-cost-min="51000" data-cost-max="102000">
-                            Multi-Region Redundancy
+                            <span>Multi-Region Redundancy <br><strong>51,000 – 102,000</strong></span>
                         </label>
                     </td>
                     <td class="cost-cell" data-label="Cost Range">
@@ -325,7 +341,7 @@
                 </tr>
 
                 <!-- Separator -->
-                <tr><td colspan="2" style="background:#eee; padding:5px; text-align:center; font-weight:bold; font-size:0.9em;">OPTIONAL ADD-ONS</td></tr>
+                <tr><td colspan="2" style="background:#eee; padding:10px; text-align:center; font-weight:bold; font-size:0.85em; text-transform:uppercase; letter-spacing:1px;">Optional Add-Ons</td></tr>
 
                 <!-- Optional Modules -->
                 <tr>
@@ -404,12 +420,12 @@
 </div>
 
 <script>
-    // Base Calculations (Pre-calculated averages to ensure JS matches text)
-    // Theme: ~15,937.50 | Dev: ~225,000
-    const baseTotalMid = 240937.50; 
+    // Base Calculations (Integers Only)
+    // Theme: ~15,937 | Dev: ~225,000
+    const baseTotalMid = 240937; 
     
     // Maintenance: ~63,750
-    const maintenanceMid = 63750.00;
+    const maintenanceMid = 63750;
 
     function calculateTotal() {
         let oneTimeTotal = baseTotalMid;
@@ -437,6 +453,7 @@
     }
 
     function formatMZN(val) {
+        // Force no decimals
         return val.toLocaleString('en-US', {
             style: 'currency', 
             currency: 'MZN', 
